@@ -41,8 +41,8 @@ This document provides a comprehensive overview of the infrastructure setup for 
 | Property | Value |
 |----------|-------|
 | **Platform** | GitHub |
-| **Repository URL** | [https://github.com/fawadaslam1/century-sanity-plus-next](https://github.com/fawadaslam1/century-sanity-plus-next) |
-| **Repository Owner** | fawadaslam1 |
+| **Repository URL** | [https://github.com/centuryitalia/Century](https://github.com/centuryitalia/Century) |
+| **Repository Owner** | Century |
 | **Repository Name** | century-sanity-plus-next |
 | **Default Branch** | master |
 | **Development Branch** | stage |
@@ -56,8 +56,8 @@ This document provides a comprehensive overview of the infrastructure setup for 
 ### Clone Command
 
 ```bash
-git clone https://github.com/fawadaslam1/century-sanity-plus-next.git
-cd century-sanity-plus-next
+git clone https://github.com/centuryitalia/Century
+cd Century
 ```
 
 ### Repository Structure
@@ -89,7 +89,7 @@ century/
 
 | Property | Value |
 |----------|-------|
-| **Project ID** | `lnqcgpdf` |
+| **Project ID** | `lnqcgpdf (will-update-with-your-account)` |
 | **Dataset** | `production` |
 | **Project Title** | Sanity + Next.js Starter Template |
 | **Studio URL (Local)** | http://localhost:3333 |
@@ -132,9 +132,6 @@ The studio uses the following plugins:
 5. **Vision Tool** - GROQ query testing
 
 ### Sanity Configuration File
-
-Location: [`studio/sanity.config.ts`](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/studio/sanity.config.ts)
-
 Key configurations:
 - Project ID and dataset from environment variables
 - Preview URL for visual editing
@@ -158,8 +155,6 @@ Key configurations:
 | **Output Directory** | `.next` |
 
 ### Vercel Configuration
-
-Location: [`frontend/vercel.json`](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/frontend/vercel.json)
 
 ```json
 {
@@ -206,7 +201,7 @@ Required for the Next.js application:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Sanity project ID (public) | `lnqcgpdf` |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Sanity project ID (public) | `lnqcgpdf (will-update-with-your-account)` |
 | `NEXT_PUBLIC_SANITY_DATASET` | Sanity dataset name (public) | `production` |
 | `SANITY_API_READ_TOKEN` | Sanity API token for server-side reads | `sk...` (secret) |
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob storage token | `vercel_blob_...` (secret) |
@@ -217,7 +212,7 @@ Required for Sanity Studio:
 
 | Variable | Description | Example |
 |----------|-------------|---------|
-| `SANITY_STUDIO_PROJECT_ID` | Sanity project ID | `lnqcgpdf` |
+| `SANITY_STUDIO_PROJECT_ID` | Sanity project ID | `lnqcgpdf (will-update-with-your-account)` |
 | `SANITY_STUDIO_DATASET` | Sanity dataset name | `production` |
 | `SANITY_STUDIO_PREVIEW_URL` | Frontend URL for preview | `http://localhost:3000` (local)<br>`https://century-sanity-plus-next-frontend.vercel.app` (production) |
 
@@ -227,7 +222,7 @@ Required for Sanity Studio:
 
 **Frontend** (`.env.local` in `frontend/` directory):
 ```env
-NEXT_PUBLIC_SANITY_PROJECT_ID=lnqcgpdf
+NEXT_PUBLIC_SANITY_PROJECT_ID=lnqcgpdf (will-update-with-your-account)
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_READ_TOKEN=your_token_here
 BLOB_READ_WRITE_TOKEN=your_blob_token_here
@@ -235,7 +230,7 @@ BLOB_READ_WRITE_TOKEN=your_blob_token_here
 
 **Studio** (`.env` in `studio/` directory):
 ```env
-SANITY_STUDIO_PROJECT_ID=lnqcgpdf
+SANITY_STUDIO_PROJECT_ID=lnqcgpdf (will-update-with-your-account)
 SANITY_STUDIO_DATASET=production
 SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
 ```
@@ -249,7 +244,7 @@ SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
 ### Obtaining Sanity API Token
 
 1. Visit [sanity.io/manage](https://sanity.io/manage)
-2. Select project `lnqcgpdf`
+2. Select project `lnqcgpdf (will-update-with-your-account)`
 3. Navigate to **API** → **Tokens**
 4. Click **Add API token**
 5. Configure:
@@ -355,13 +350,13 @@ graph LR
 
 ### Repository Access
 
-- **GitHub Repository**: [https://github.com/fawadaslam1/century-sanity-plus-next](https://github.com/fawadaslam1/century-sanity-plus-next)
+- **GitHub Repository**: [https://github.com/centuryitalia/Century](https://github.com/centuryitalia/Century)
 - **Access Level**: Private repository (requires GitHub account with access)
 
 ### Sanity CMS Access
 
 - **Sanity Manage**: [https://sanity.io/manage](https://sanity.io/manage)
-- **Project ID**: `lnqcgpdf`
+- **Project ID**: `lnqcgpdf (will-update-with-your-account)`
 - **Studio (Production)**: [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app)
 - **Access**: Requires Sanity account with project permissions
 
@@ -378,16 +373,16 @@ graph LR
 
 For more detailed information, refer to:
 
-- [README.md](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/README.md) - Main project documentation
-- [IMPORT_SYSTEM_README.md](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/IMPORT_SYSTEM_README.md) - Product import system details
-- [PRODUCT_SCHEMA_DOCUMENTATION.md](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/studio/PRODUCT_SCHEMA_DOCUMENTATION.md) - Product schema guide
-- [CATEGORY_SCHEMA_DOCUMENTATION.md](file:///home/fawad/VSF-MOUNTAIN%20GROUP/VSF2/century/studio/CATEGORY_SCHEMA_DOCUMENTATION.md) - Category schema guide
+- [README.md](https://github.com/centuryitalia/Century/README.md) - Main project documentation
+- [IMPORT_SYSTEM_README.md](https://github.com/centuryitalia/Century/IMPORT_SYSTEM_README.md) - Product import system details
+- [PRODUCT_SCHEMA_DOCUMENTATION.md](https://github.com/centuryitalia/Century/studio/PRODUCT_SCHEMA_DOCUMENTATION.md) - Product schema guide
+- [CATEGORY_SCHEMA_DOCUMENTATION.md](https://github.com/centuryitalia/Century/studio/CATEGORY_SCHEMA_DOCUMENTATION.md) - Category schema guide
 
 ---
 
 ## 📞 Support & Maintenance
 
-**Project Maintainer**: Fawad Aslam  
+**Project Maintainer**: Riccardo  
 **Last Updated**: December 2025  
 **Project Status**: Active Development
 
