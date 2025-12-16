@@ -306,12 +306,11 @@ SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
 
 Il progetto utilizza **npm workspaces** per gestire due applicazioni separate:
 
-```json
 {
-  "workspaces": [
-    "studio",
-    "frontend"
-  ]
+"workspaces": [
+"studio",
+"frontend"
+]
 }
 
 ## 🧩 Architettura Frontend
