@@ -333,7 +333,7 @@ frontend/
 ```
 
 ## 🔄 Flusso dei Dati
-
+```mermaid
 graph LR
     A[File Excel] --> B[API Import]
     B --> C[Elaborazione & Validazione]
@@ -342,7 +342,7 @@ graph LR
     E --> F[Browser Utente]
     G[Sanity Studio] --> D
     H[Vercel Blob] --> E
-
+```
 
 ## 🧱 Architettura del Sistema di Import
 
