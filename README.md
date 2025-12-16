@@ -233,7 +233,7 @@ Necessarie per Sanity Studio:
 **Frontend** (`frontend/.env.local`):
 
 ```env
-NEXT_PUBLIC_SANITY_PROJECT_ID=lnqcgpdf (da aggiornare)
+NEXT_PUBLIC_SANITY_PROJECT_ID=0a54rfdl
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_READ_TOKEN=your_token_here
 BLOB_READ_WRITE_TOKEN=your_blob_token_here
@@ -242,7 +242,7 @@ BLOB_READ_WRITE_TOKEN=your_blob_token_here
 **Studio** (`studio/.env`):
 
 ```env
-SANITY_STUDIO_PROJECT_ID=lnqcgpdf (da aggiornare)
+SANITY_STUDIO_PROJECT_ID=o4OscCJ2E (da aggiornare)
 SANITY_STUDIO_DATASET=production
 SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
 ```
