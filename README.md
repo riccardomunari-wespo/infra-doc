@@ -333,7 +333,6 @@ frontend/
 
 ## 🔄 Flusso dei Dati
 
-```mermaid
 graph LR
     A[File Excel] --> B[API Import]
     B --> C[Elaborazione & Validazione]
