@@ -13,8 +13,8 @@ Questo documento fornisce una panoramica completa della configurazione dell’in
 3. [Configurazione Sanity CMS](#-configurazione-sanity-cms)
 4. [Deploy su Vercel](#-deploy-su-vercel)
 5. [Variabili d’Ambiente](#-variabili-dambiente)
-6. [Stack Tecnologico](#-stack-tecnologico)
-7. [Architettura del Progetto](#-architettura-del-progetto)
+6. [Stack Tecnologico](#%EF%B8%8F-stack-tecnologico)
+7. [Architettura del Progetto](#%EF%B8%8F-architettura-del-progetto)
 8. [Informazioni di Accesso](#-informazioni-di-accesso)
 
 ---
