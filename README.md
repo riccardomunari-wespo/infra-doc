@@ -312,24 +312,25 @@ Il progetto utilizza **npm workspaces** per gestire due applicazioni separate:
 "frontend"
 ]
 }
-
 ## 🧩 Architettura Frontend
 
+```text
 frontend/
-├── app/ # Next.js App Router
-│ ├── api/ # Route API
-│ │ ├── draft-mode/ # Modalità bozza per preview
-│ │ └── import/ # Endpoint import prodotti
-│ │ ├── cron/ # Gestione cron job
-│ │ ├── execute/ # Esecuzione import
-│ │ └── process/ # Elaborazione import
-│ ├── layout.tsx # Layout principale
-│ └── page.tsx # Homepage
-├── components/ # Componenti React
-├── lib/ # Utility
-│ ├── sanity/ # Client e query Sanity
-│ └── import/ # Utility sistema di import
-└── public/ # Asset statici
+├── app/                      # Next.js App Router
+│   ├── api/                  # Route API
+│   │   ├── draft-mode/       # Modalità bozza per preview
+│   │   └── import/           # Endpoint import prodotti
+│   │       ├── cron/         # Gestione cron job
+│   │       ├── execute/      # Esecuzione import
+│   │       └── process/      # Elaborazione import
+│   ├── layout.tsx            # Layout principale
+│   └── page.tsx              # Homepage
+├── components/               # Componenti React
+├── lib/                      # Utility
+│   ├── sanity/               # Client e query Sanity
+│   └── import/               # Utility sistema di import
+└── public/                   # Asset statici
+```
 
 ## 🔄 Flusso dei Dati
 
@@ -341,6 +342,7 @@ graph LR
     E --> F[Browser Utente]
     G[Sanity Studio] --> D
     H[Vercel Blob] --> E
+
 
 ## 🧱 Architettura del Sistema di Import
 
