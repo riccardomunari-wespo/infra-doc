@@ -1,160 +1,166 @@
-# Century Italia - Project Infrastructure Documentation
+# Century Italia – Documentazione dell’Infrastruttura di Progetto
 
 ![Century Italia](https://www.century-italia.it/wp-content/themes/century/images/logo.png)
 
-This document provides a comprehensive overview of the infrastructure setup for the Century Italia project, including Git repository, Sanity CMS configuration, and Vercel deployment details.
+Questo documento fornisce una panoramica completa della configurazione dell’infrastruttura del progetto **Century Italia**, includendo il repository Git, la configurazione di Sanity CMS e i dettagli di deploy su Vercel.
 
 ---
 
-## 📋 Table of Contents
+## 📋 Indice
 
-1. [Project Overview](#project-overview)
-2. [Git Repository](#git-repository)
-3. [Sanity CMS Configuration](#sanity-cms-configuration)
-4. [Vercel Deployment](#vercel-deployment)
-5. [Environment Variables](#environment-variables)
-6. [Technology Stack](#technology-stack)
-7. [Project Architecture](#project-architecture)
-8. [Access Information](#access-information)
-
----
-
-## 🎯 Project Overview
-
-**Project Name**: Century Italia - Lighting Product Catalog  
-**Description**: A modern, high-performance lighting product catalog website built with Next.js and Sanity CMS, featuring comprehensive product management, category organization, and SEO optimization.
-
-**Key Features**:
-- Server-side rendered React application with Next.js 15+
-- Headless CMS with Sanity for content management
-- Automated product import system with nightly cron jobs
-- Real-time visual editing capabilities
-- Multi-language support
-- SEO optimized with excellent PageSpeed scores
+1. [Panoramica del Progetto](#panoramica-del-progetto)
+2. [Repository Git](#repository-git)
+3. [Configurazione Sanity CMS](#configurazione-sanity-cms)
+4. [Deploy su Vercel](#deploy-su-vercel)
+5. [Variabili d’Ambiente](#variabili-dambiente)
+6. [Stack Tecnologico](#stack-tecnologico)
+7. [Architettura del Progetto](#architettura-del-progetto)
+8. [Informazioni di Accesso](#informazioni-di-accesso)
 
 ---
 
-## 🔗 Git Repository
+## 🎯 Panoramica del Progetto
 
-### Repository Information
+**Nome Progetto**: Century Italia – Catalogo Prodotti Illuminazione
+**Descrizione**: Sito web moderno e ad alte prestazioni per il catalogo prodotti di illuminazione, sviluppato con Next.js e Sanity CMS, con gestione completa dei prodotti, organizzazione per categorie e ottimizzazione SEO.
 
-| Property | Value |
-|----------|-------|
-| **Platform** | GitHub |
-| **Repository URL** | [https://github.com/centuryitalia/Century](https://github.com/centuryitalia/Century) |
-| **Repository Owner** | Century |
-| **Repository Name** | century-sanity-plus-next |
-| **Default Branch** | master |
-| **Development Branch** | stage |
+**Funzionalità principali**:
 
-### Branch Strategy
+* Applicazione React con rendering server-side tramite Next.js 15+
+* CMS headless con Sanity per la gestione dei contenuti
+* Sistema automatizzato di importazione prodotti con cron job notturni
+* Capacità di editing visuale in tempo reale
+* Supporto multi-lingua
+* SEO ottimizzato con eccellenti punteggi PageSpeed
 
-- **`master`** - Production branch, deployed to Vercel production
-- **`stage`** - Development/staging branch for testing before production
-- Feature branches are created from `stage` and merged back after review
+---
 
-### Clone Command
+## 🔗 Repository Git
+
+### Informazioni sul Repository
+
+| Proprietà                   | Valore                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------ |
+| **Piattaforma**             | GitHub                                                                               |
+| **URL Repository**          | [https://github.com/centuryitalia/Century](https://github.com/centuryitalia/Century) |
+| **Proprietario Repository** | Century                                                                              |
+| **Nome Repository**         | century-sanity-plus-next                                                             |
+| **Branch di Default**       | master                                                                               |
+| **Branch di Sviluppo**      | stage                                                                                |
+
+### Strategia dei Branch
+
+* **`master`** – Branch di produzione, deployato su Vercel (production)
+* **`stage`** – Branch di sviluppo/staging per test prima della produzione
+* I feature branch vengono creati a partire da `stage` e mergiati dopo revisione
+
+### Comando di Clone
 
 ```bash
 git clone https://github.com/centuryitalia/Century
 cd Century
 ```
 
-### Repository Structure
+### Struttura del Repository
 
 ```
 century/
-├── frontend/              # Next.js frontend application
-│   ├── app/              # Next.js App Router pages
-│   ├── components/       # React components
-│   ├── lib/              # Utility functions and Sanity client
-│   ├── public/           # Static assets
-│   ├── package.json      # Frontend dependencies
-│   └── vercel.json       # Vercel configuration
+├── frontend/              # Applicazione frontend Next.js
+│   ├── app/              # Pagine App Router di Next.js
+│   ├── components/       # Componenti React
+│   ├── lib/              # Funzioni di utilità e client Sanity
+│   ├── public/           # Asset statici
+│   ├── package.json      # Dipendenze frontend
+│   └── vercel.json       # Configurazione Vercel
 ├── studio/               # Sanity CMS Studio
 │   ├── src/
-│   │   ├── schemaTypes/  # Content schemas
-│   │   └── structure/    # Studio structure configuration
-│   ├── sanity.config.ts  # Sanity configuration
-│   └── package.json      # Studio dependencies
-├── package.json          # Root package.json with workspace config
-└── README.md             # Project documentation
+│   │   ├── schemaTypes/  # Schemi dei contenuti
+│   │   └── structure/    # Configurazione struttura Studio
+│   ├── sanity.config.ts  # Configurazione Sanity
+│   └── package.json      # Dipendenze Studio
+├── package.json          # Package.json root con configurazione workspace
+└── README.md             # Documentazione del progetto
 ```
 
 ---
 
-## 🎨 Sanity CMS Configuration
+## 🎨 Configurazione Sanity CMS
 
-### Sanity Project Details
+### Dettagli Progetto Sanity
 
-| Property | Value |
-|----------|-------|
-| **Project ID** | `lnqcgpdf (will-update-with-your-account)` |
-| **Dataset** | `production` |
-| **Project Title** | Sanity + Next.js Starter Template |
-| **Studio URL (Local)** | http://localhost:3333 |
-| **Studio URL (Production)** | [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app) |
+| Proprietà                   | Valore                                                                                                   |
+| --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Project ID**              | `lnqcgpdf (da aggiornare con il tuo account)`                                                            |
+| **Dataset**                 | `production`                                                                                             |
+| **Titolo Progetto**         | Sanity + Next.js Starter Template                                                                        |
+| **Studio URL (Locale)**     | [http://localhost:3333](http://localhost:3333)                                                           |
+| **Studio URL (Produzione)** | [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app) |
 
-### Content Schemas
+### Schemi di Contenuto
 
-#### 1. Product Schema
-Comprehensive lighting product management with **40+ custom fields** organized in 5 groups:
+#### 1. Schema Prodotto
 
-- **General Characteristics**: Name, item number, EAN code, technology, family, line, categories
-- **Technical Features**: Power, luminous flux, light color, CRI, voltage, IP/IK ratings
-- **Dimensions**: Length, width, thickness, weight
-- **Packing**: Package type, carton quantities, gross weight
-- **Media & Images**: Product images, gallery, technical documents
+Gestione completa dei prodotti di illuminazione con **oltre 40 campi personalizzati**, organizzati in 5 gruppi:
 
-#### 2. Category Schema
-Hierarchical category organization with:
+* **Caratteristiche Generali**: Nome, codice articolo, codice EAN, tecnologia, famiglia, linea, categorie
+* **Caratteristiche Tecniche**: Potenza, flusso luminoso, colore della luce, CRI, tensione, rating IP/IK
+* **Dimensioni**: Lunghezza, larghezza, spessore, peso
+* **Imballo**: Tipo di confezione, quantità per cartone, peso lordo
+* **Media e Immagini**: Immagini prodotto, galleria, documenti tecnici
 
-- Basic information (name, slug, description, image)
-- Parent-child category relationships
-- Bidirectional product assignments
-- SEO metadata (meta title, meta description)
-- Display order and active/inactive toggle
+#### 2. Schema Categoria
 
-#### 3. Additional Schemas
-- **Page Schema**: Custom pages with flexible content
-- **Post Schema**: Blog posts and articles
-- **Person Schema**: Authors and team members
-- **Settings Schema**: Site-wide settings (singleton)
+Organizzazione gerarchica delle categorie con:
 
-### Sanity Plugins
+* Informazioni base (nome, slug, descrizione, immagine)
+* Relazioni padre-figlio
+* Assegnazione bidirezionale dei prodotti
+* Metadati SEO (meta title, meta description)
+* Ordine di visualizzazione e attivazione/disattivazione
 
-The studio uses the following plugins:
+#### 3. Schemi Aggiuntivi
 
-1. **Presentation Tool** - Visual editing with live preview
-2. **Structure Tool** - Custom studio structure
-3. **Unsplash Image Asset** - Stock image integration
-4. **Sanity Assist** - AI-powered content assistance
-5. **Vision Tool** - GROQ query testing
+* **Schema Page**: Pagine personalizzate con contenuti flessibili
+* **Schema Post**: Articoli e post del blog
+* **Schema Person**: Autori e membri del team
+* **Schema Settings**: Impostazioni globali del sito (singleton)
 
-### Sanity Configuration File
-Key configurations:
-- Project ID and dataset from environment variables
-- Preview URL for visual editing
-- Document resolvers for different content types
-- Location resolvers for presentation tool
+### Plugin Sanity
+
+Lo Studio utilizza i seguenti plugin:
+
+1. **Presentation Tool** – Editing visuale con anteprima live
+2. **Structure Tool** – Struttura personalizzata dello Studio
+3. **Unsplash Image Asset** – Integrazione immagini stock
+4. **Sanity Assist** – Assistenza AI per la creazione dei contenuti
+5. **Vision Tool** – Test delle query GROQ
+
+### File di Configurazione Sanity
+
+Configurazioni principali:
+
+* Project ID e dataset tramite variabili d’ambiente
+* URL di preview per l’editing visuale
+* Resolver dei documenti per i diversi tipi di contenuto
+* Resolver di posizione per il presentation tool
 
 ---
 
-## 🚀 Vercel Deployment
+## 🚀 Deploy su Vercel
 
-### Deployment Information
+### Informazioni di Deploy
 
-| Property | Value |
-|----------|-------|
-| **Platform** | Vercel |
-| **Frontend URL** | [https://century-sanity-plus-next-frontend.vercel.app](https://century-sanity-plus-next-frontend.vercel.app) |
-| **Studio URL** | [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app) |
-| **Framework** | Next.js |
-| **Node Version** | 20.x |
-| **Build Command** | `npm run build` |
-| **Output Directory** | `.next` |
+| Proprietà               | Valore                                                                                                       |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **Piattaforma**         | Vercel                                                                                                       |
+| **URL Frontend**        | [https://century-sanity-plus-next-frontend.vercel.app](https://century-sanity-plus-next-frontend.vercel.app) |
+| **URL Studio**          | [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app)     |
+| **Framework**           | Next.js                                                                                                      |
+| **Versione Node**       | 20.x                                                                                                         |
+| **Build Command**       | `npm run build`                                                                                              |
+| **Directory di Output** | `.next`                                                                                                      |
 
-### Vercel Configuration
+### Configurazione Vercel
 
 ```json
 {
@@ -168,130 +174,137 @@ Key configurations:
 }
 ```
 
-### Cron Jobs
+### Cron Job
 
-**Automated Product Import**:
-- **Path**: `/api/import/cron`
-- **Schedule**: `0 2 * * *` (Daily at 2:00 AM UTC)
-- **Purpose**: Automated nightly import of product data from Excel files
+**Importazione automatica prodotti**:
 
-### Deployment Workflow
+* **Path**: `/api/import/cron`
+* **Schedulazione**: `0 2 * * *` (ogni giorno alle 02:00 UTC)
+* **Scopo**: Importazione notturna automatica dei dati prodotto da file Excel
 
-1. **Automatic Deployments**:
-   - Push to `master` branch → Production deployment
-   - Push to `stage` branch → Preview deployment
+### Workflow di Deploy
 
-2. **Build Process**:
-   - Install dependencies
-   - Run Sanity type generation (`npm run typegen`)
-   - Build Next.js application (`next build`)
-   - Deploy to Vercel edge network
+1. **Deploy automatici**:
+
+   * Push su `master` → deploy in produzione
+   * Push su `stage` → deploy di preview
+
+2. **Processo di Build**:
+
+   * Installazione dipendenze
+   * Generazione tipi Sanity (`npm run typegen`)
+   * Build applicazione Next.js (`next build`)
+   * Deploy sulla rete edge di Vercel
 
 3. **Preview Deployments**:
-   - Every pull request gets a unique preview URL
-   - Automatic preview updates on new commits
+
+   * Ogni pull request genera una preview dedicata
+   * Aggiornamenti automatici ad ogni commit
 
 ---
 
-## 🔐 Environment Variables
+## 🔐 Variabili d’Ambiente
 
-### Frontend Environment Variables
+### Variabili Frontend
 
-Required for the Next.js application:
+Necessarie per l’applicazione Next.js:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Sanity project ID (public) | `lnqcgpdf (will-update-with-your-account)` |
-| `NEXT_PUBLIC_SANITY_DATASET` | Sanity dataset name (public) | `production` |
-| `SANITY_API_READ_TOKEN` | Sanity API token for server-side reads | `sk...` (secret) |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob storage token | `vercel_blob_...` (secret) |
+| Variabile                       | Descrizione                              | Esempio                     |
+| ------------------------------- | ---------------------------------------- | --------------------------- |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Project ID Sanity (pubblico)             | `lnqcgpdf (da aggiornare)`  |
+| `NEXT_PUBLIC_SANITY_DATASET`    | Nome dataset Sanity (pubblico)           | `production`                |
+| `SANITY_API_READ_TOKEN`         | Token API Sanity per letture server-side | `sk...` (segreto)           |
+| `BLOB_READ_WRITE_TOKEN`         | Token Vercel Blob storage                | `vercel_blob_...` (segreto) |
 
-### Studio Environment Variables
+### Variabili Studio
 
-Required for Sanity Studio:
+Necessarie per Sanity Studio:
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `SANITY_STUDIO_PROJECT_ID` | Sanity project ID | `lnqcgpdf (will-update-with-your-account)` |
-| `SANITY_STUDIO_DATASET` | Sanity dataset name | `production` |
-| `SANITY_STUDIO_PREVIEW_URL` | Frontend URL for preview | `http://localhost:3000` (local)<br>`https://century-sanity-plus-next-frontend.vercel.app` (production) |
+| Variabile                   | Descrizione                 | Esempio                                                                                                 |
+| --------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `SANITY_STUDIO_PROJECT_ID`  | Project ID Sanity           | `lnqcgpdf (da aggiornare)`                                                                              |
+| `SANITY_STUDIO_DATASET`     | Dataset Sanity              | `production`                                                                                            |
+| `SANITY_STUDIO_PREVIEW_URL` | URL frontend per la preview | `http://localhost:3000` (locale)<br>`https://century-sanity-plus-next-frontend.vercel.app` (produzione) |
 
-### Setting Up Environment Variables
+### Configurazione Variabili d’Ambiente
 
-#### Local Development
+#### Sviluppo Locale
 
-**Frontend** (`.env.local` in `frontend/` directory):
+**Frontend** (`frontend/.env.local`):
+
 ```env
-NEXT_PUBLIC_SANITY_PROJECT_ID=lnqcgpdf (will-update-with-your-account)
+NEXT_PUBLIC_SANITY_PROJECT_ID=lnqcgpdf (da aggiornare)
 NEXT_PUBLIC_SANITY_DATASET=production
 SANITY_API_READ_TOKEN=your_token_here
 BLOB_READ_WRITE_TOKEN=your_blob_token_here
 ```
 
-**Studio** (`.env` in `studio/` directory):
+**Studio** (`studio/.env`):
+
 ```env
-SANITY_STUDIO_PROJECT_ID=lnqcgpdf (will-update-with-your-account)
+SANITY_STUDIO_PROJECT_ID=lnqcgpdf (da aggiornare)
 SANITY_STUDIO_DATASET=production
 SANITY_STUDIO_PREVIEW_URL=http://localhost:3000
 ```
 
-#### Vercel Production
+#### Produzione su Vercel
 
-1. Go to Vercel Dashboard → Project Settings → Environment Variables
-2. Add each variable with appropriate scope (Production/Preview/Development)
-3. Redeploy to apply changes
+1. Accedi alla Dashboard Vercel → Project Settings → Environment Variables
+2. Aggiungi ogni variabile con lo scope appropriato (Production / Preview / Development)
+3. Esegui un redeploy per applicare le modifiche
 
-### Obtaining Sanity API Token
+### Ottenere un Token API Sanity
 
-1. Visit [sanity.io/manage](https://sanity.io/manage)
-2. Select project `lnqcgpdf (will-update-with-your-account)`
-3. Navigate to **API** → **Tokens**
-4. Click **Add API token**
-5. Configure:
-   - **Name**: Vercel Read Token
-   - **Permissions**: Viewer (read-only) or Editor (read-write)
-6. Copy token and add to environment variables
+1. Visita [https://sanity.io/manage](https://sanity.io/manage)
+2. Seleziona il progetto `lnqcgpdf (da aggiornare)`
+3. Vai su **API** → **Tokens**
+4. Clicca su **Add API token**
+5. Configura:
+
+   * **Nome**: Vercel Read Token
+   * **Permessi**: Viewer (sola lettura) o Editor (lettura/scrittura)
+6. Copia il token e aggiungilo alle variabili d’ambiente
 
 ---
 
-## 🛠️ Technology Stack
+## 🛠️ Stack Tecnologico
 
 ### Frontend
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
-| **Next.js** | 15.5.7 | React framework with App Router |
-| **React** | 19.1.1 | UI library |
-| **TypeScript** | 5.9.2 | Type safety |
-| **Tailwind CSS** | 4.1.12 | Utility-first CSS framework |
-| **next-sanity** | 10.0.14 | Sanity integration for Next.js |
-| **@sanity/client** | 7.9.0 | Sanity client library |
-| **@vercel/blob** | 0.27.0 | Vercel Blob storage |
-| **@vercel/speed-insights** | 1.2.0 | Performance monitoring |
-| **xlsx** | 0.18.5 | Excel file processing |
+| Tecnologia | Versione | Scopo |
+|------------|----------|-------|
+| **Next.js** | 15.5.7 | Framework React con App Router |
+| **React** | 19.1.1 | Libreria UI |
+| **TypeScript** | 5.9.2 | Tipizzazione statica |
+| **Tailwind CSS** | 4.1.12 | Framework CSS utility-first |
+| **next-sanity** | 10.0.14 | Integrazione Sanity per Next.js |
+| **@sanity/client** | 7.9.0 | Client Sanity |
+| **@vercel/blob** | 0.27.0 | Storage Vercel Blob |
+| **@vercel/speed-insights** | 1.2.0 | Monitoraggio delle performance |
+| **xlsx** | 0.18.5 | Elaborazione file Excel |
 
 ### CMS (Sanity Studio)
 
-| Technology | Version | Purpose |
-|------------|---------|---------|
+| Tecnologia | Versione | Scopo |
+|------------|----------|-------|
 | **Sanity** | 4.5.0 | Headless CMS |
-| **@sanity/vision** | Latest | GROQ query testing |
-| **sanity-plugin-asset-source-unsplash** | Latest | Stock images |
-| **@sanity/assist** | Latest | AI content assistance |
+| **@sanity/vision** | Latest | Test delle query GROQ |
+| **sanity-plugin-asset-source-unsplash** | Latest | Integrazione immagini stock |
+| **@sanity/assist** | Latest | Assistenza AI per i contenuti |
 
-### Development Tools
+### Strumenti di Sviluppo
 
-- **ESLint** - Code linting
-- **Prettier** - Code formatting
-- **npm-run-all2** - Run multiple scripts in parallel
+- **ESLint** – Analisi statica e linting del codice
+- **Prettier** – Formattazione automatica del codice
+- **npm-run-all2** – Esecuzione di più script in parallelo
 
 ---
 
-## 🏗️ Project Architecture
+## 🏗️ Architettura del Progetto
 
-### Monorepo Structure
+### Struttura Monorepo
 
-The project uses **npm workspaces** to manage two separate applications:
+Il progetto utilizza **npm workspaces** per gestire due applicazioni separate:
 
 ```json
 {
@@ -300,94 +313,74 @@ The project uses **npm workspaces** to manage two separate applications:
     "frontend"
   ]
 }
-```
 
-### Frontend Architecture
+## 🧩 Architettura Frontend
 
-```
 frontend/
-├── app/                      # Next.js App Router
-│   ├── api/                 # API routes
-│   │   ├── draft-mode/      # Draft mode for preview
-│   │   └── import/          # Product import endpoints
-│   │       ├── cron/        # Cron job handler
-│   │       ├── execute/     # Import execution
-│   │       └── process/     # Import processing
-│   ├── layout.tsx           # Root layout
-│   └── page.tsx             # Home page
-├── components/              # React components
-├── lib/                     # Utilities
-│   ├── sanity/             # Sanity client and queries
-│   └── import/             # Import system utilities
-└── public/                 # Static assets
-```
+├── app/ # Next.js App Router
+│ ├── api/ # Route API
+│ │ ├── draft-mode/ # Modalità bozza per preview
+│ │ └── import/ # Endpoint import prodotti
+│ │ ├── cron/ # Gestione cron job
+│ │ ├── execute/ # Esecuzione import
+│ │ └── process/ # Elaborazione import
+│ ├── layout.tsx # Layout principale
+│ └── page.tsx # Homepage
+├── components/ # Componenti React
+├── lib/ # Utility
+│ ├── sanity/ # Client e query Sanity
+│ └── import/ # Utility sistema di import
+└── public/ # Asset statici
 
-### Data Flow
+## 🔄 Flusso dei Dati
 
 ```mermaid
 graph LR
-    A[Excel File] --> B[Import API]
-    B --> C[Process & Validate]
+    A[File Excel] --> B[API Import]
+    B --> C[Elaborazione & Validazione]
     C --> D[Sanity CMS]
-    D --> E[Next.js Frontend]
-    E --> F[User Browser]
+    D --> E[Frontend Next.js]
+    E --> F[Browser Utente]
     G[Sanity Studio] --> D
     H[Vercel Blob] --> E
-```
 
-### Import System Architecture
+## 🧱 Architettura del Sistema di Import
 
-1. **Excel Upload**: Client uploads Excel file via Sanity Studio tool
-2. **Processing**: API validates and maps 113 columns to product schema
-3. **Media Handling**: Product images stored in Vercel Blob storage
-4. **Sanity Update**: Products created/updated in Sanity CMS
-5. **Automated Sync**: Nightly cron job processes new data
-6. **Soft Delete**: Products marked inactive based on "articolo sul web" column
+### Caricamento Excel
+Il client carica il file Excel tramite uno strumento dedicato in **Sanity Studio**.
 
----
+### Elaborazione
+L’API valida i dati e mappa **113 colonne** nello schema prodotto.
 
-## 🔑 Access Information
+### Gestione Media
+Le immagini prodotto vengono caricate e salvate su **Vercel Blob Storage**.
 
-### Repository Access
+### Aggiornamento Sanity
+I prodotti vengono creati o aggiornati all’interno del CMS **Sanity**.
 
-- **GitHub Repository**: [https://github.com/centuryitalia/Century](https://github.com/centuryitalia/Century)
-- **Access Level**: Private repository (requires GitHub account with access)
+### Sincronizzazione Automatica
+Un **cron job notturno** elabora automaticamente i nuovi dati disponibili.
 
-### Sanity CMS Access
-
-- **Sanity Manage**: [https://sanity.io/manage](https://sanity.io/manage)
-- **Project ID**: `lnqcgpdf (will-update-with-your-account)`
-- **Studio (Production)**: [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app)
-- **Access**: Requires Sanity account with project permissions
-
-### Vercel Access
-
-- **Vercel Dashboard**: [https://vercel.com/dashboard](https://vercel.com/dashboard)
-- **Frontend**: [https://century-sanity-plus-next-frontend.vercel.app](https://century-sanity-plus-next-frontend.vercel.app)
-- **Studio**: [https://century-sanity-plus-next-studio.vercel.app](https://century-sanity-plus-next-studio.vercel.app)
-- **Access**: Requires Vercel account with team/project access
+### Soft Delete
+I prodotti vengono marcati come inattivi in base al valore della colonna  
+`"articolo sul web"` presente nel file Excel.
 
 ---
 
-## 📚 Additional Documentation
+## 🔑 Informazioni di Accesso
 
-For more detailed information, refer to:
+### Accesso al Repository
+- **Repository GitHub**: https://github.com/centuryitalia/Century  
+- **Livello di Accesso**: Repository privato (richiede account GitHub autorizzato)
 
-- [README.md](https://github.com/centuryitalia/Century/README.md) - Main project documentation
-- [IMPORT_SYSTEM_README.md](https://github.com/centuryitalia/Century/IMPORT_SYSTEM_README.md) - Product import system details
-- [PRODUCT_SCHEMA_DOCUMENTATION.md](https://github.com/centuryitalia/Century/studio/PRODUCT_SCHEMA_DOCUMENTATION.md) - Product schema guide
-- [CATEGORY_SCHEMA_DOCUMENTATION.md](https://github.com/centuryitalia/Century/studio/CATEGORY_SCHEMA_DOCUMENTATION.md) - Category schema guide
+### Accesso a Sanity CMS
+- **Sanity Manage**: https://sanity.io/manage  
+- **Project ID**: `lnqcgpdf (will-update-with-your-account)`  
+- **Studio (Produzione)**: https://century-sanity-plus-next-studio.vercel.app  
+- **Accesso**: Richiede un account Sanity con permessi sul progetto
 
----
-
-## 📞 Support & Maintenance
-
-**Project Maintainer**: Riccardo  
-**Last Updated**: December 2025  
-**Project Status**: Active Development
-
-For questions or issues, please contact the project maintainer or create an issue in the GitHub repository.
-
----
-
-**© 2025 Century Italia - All Rights Reserved**
+### Accesso a Vercel
+- **Dashboard Vercel**: https://vercel.com/dashboard  
+- **Frontend**: https://century-sanity-plus-next-frontend.vercel.app  
+- **Studio**: https://century-sanity-plus-next-studio.vercel.app  
+- **Accesso**: Richiede un account Vercel con accesso al team/progetto
