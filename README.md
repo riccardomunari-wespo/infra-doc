@@ -8,14 +8,14 @@ Questo documento fornisce una panoramica completa della configurazione dell’in
 
 ## 📋 Indice
 
-1. [Panoramica del Progetto](#panoramica-del-progetto)
-2. [Repository Git](#repository-git)
-3. [Configurazione Sanity CMS](#configurazione-sanity-cms)
-4. [Deploy su Vercel](#deploy-su-vercel)
-5. [Variabili d’Ambiente](#variabili-dambiente)
-6. [Stack Tecnologico](#stack-tecnologico)
-7. [Architettura del Progetto](#architettura-del-progetto)
-8. [Informazioni di Accesso](#informazioni-di-accesso)
+1. [Panoramica del Progetto](#-panoramica-del-progetto)
+2. [Repository Git](#-repository-git)
+3. [Configurazione Sanity CMS](#-configurazione-sanity-cms)
+4. [Deploy su Vercel](#-deploy-su-vercel)
+5. [Variabili d’Ambiente](#-variabili-dambiente)
+6. [Stack Tecnologico](#-stack-tecnologico)
+7. [Architettura del Progetto](#-architettura-del-progetto)
+8. [Informazioni di Accesso](#-informazioni-di-accesso)
 
 ---
 
